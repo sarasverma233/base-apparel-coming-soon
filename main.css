@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+:root{
+--Desaturated-Red: hsl(0, 36%, 70%);
+--Soft-Red: hsl(0, 93%, 68%);
+--Dark-Grayish-Red: hsl(0, 6%, 24%);
+}
+
+body{
+    background-image: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    min-height: 100svh;
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+    grid-template-rows: 1fr 2fr;
+}
+
+header{
+    margin-top: 60px;
+    margin-left: 235px;
+    background-image: url("./images/bg-pattern-desktop.svg");
+    background-position: bottom center;
+}
+
+.picture{
+    max-height: 100%;
+    grid-row: span 2;
+}
+
+.picture >.desk-hero{
+    width: 100%;
+    height: 100%;
+}
+
+.picture > .mob-hero{
+    display: none;
+}
+
+main{
+    box-sizing: border-box;
+    padding: 0 235px;
+    background-image: url("./images/bg-pattern-desktop.svg");
+}
+
+.heading{
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 10px;
+    font-size: 3.5rem;
+    color: var(--Dark-Grayish-Red);
+}
+
+.heading > .different{
+    color: var(--Desaturated-Red);
+    font-weight: 200;
+}
+
+.heading > span{
+    display: block;
+}
+
+main >.para{
+    color: var(--Desaturated-Red);
+    padding: 20px 0;
+}
+
+.emailContainer{
+    display: flex;
+    align-items: center;
+}
+
+.emailContainer > input{
+    color: var(--Dark-Grayish-Red);
+    padding: 10px 25px;
+    border-radius: 20px;
+    outline: none;
+    border: 1px solid var(--Desaturated-Red);
+    min-width: 350px;
+    font-size: 1rem;
+}
+
+.emailContainer > .error{
+    border-color: var(--Soft-Red);
+    background-image: url("./images/icon-error.svg");
+    background-repeat: no-repeat;
+    background-position: center right 50px;
+} 
+
+.btn{
+    padding: 8px 30px;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    transform: translateX(-50%);
+}
+
+.btn > img{
+    box-sizing: border-box;
+}
+
+.warning{
+    color: var(--Soft-Red);
+    margin-left: 25px;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+@media only screen and (max-width: 600px){
+    body{
+        display: flex;
+        flex-direction: column;
+    }
+
+    header{
+        margin: 25px;
+        background-image: none;
+    }
+
+    .picture{
+        min-width: 100%;
+    }
+
+    .picture > .desk-hero{
+        display: none;
+    }
+
+    .picture > .mob-hero{
+        display: block;
+        width: 100%;
+    }
+
+    main{
+        text-align: center;
+        padding: 50px 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .heading{
+        font-size: 2.5rem;
+    }
+    
+    .emailContainer > input{
+        min-width: 300px;
+    }
+
+    .warning{
+        margin-left: 0;
+    }
+}
